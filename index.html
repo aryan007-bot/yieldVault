@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:,">
+    <title>user interface for yield vault</title>
+    <link href="./styles.css" rel="stylesheet">
+    <script defer src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
+</head>
+<body>
+    <div class="middle">
+        <h1>Yield Vault</h1><hr>
+
+        <h2>Connect your wallet</h2>
+        <button onclick="connectMetamask()">connect</button><br><br>
+
+        <div class="details">
+            <h2>Details</h2>
+            <ul>
+                <li>vault deployed with DAI(0xFF34B3d4Aee8ddCd6F9AFFFB6Fe49bD371b8a357) as asset</li>
+                <li>vault is deployed on sepolia</li>
+                <li>Aave pool provider(0x012bAC54348C0E635dCAc9D5FB99f06F24136C9A) used as yield source</li>
+            </ul><br>
+        </div>
+
+        <div class="read">
+            <h2>Read</h2>
+            <button onclick="getName()">vault name</button>
+            <span id="printName"></span><br><br>
+
+            <button onclick="getTotalAssets()">total assets</button>
+            <span id="printAssets"></span><br><br>
+        </div>
+
+        <div class="write">
+            <h2>Write</h2>
+            <button onclick="deposit()">deposit</button>
+            <input type="text" placeholder="uint256 assets" id="d_assets"/>
+            <input type="text" placeholder="receiver: gets vault shares" style="width: 300px" id="d_receiver"/>
+            <span id="d_nonce"></span><br><br>
+
+            <button onclick="withdraw()">withdraw</button>
+            <input type="text" placeholder="uint256 assets" id="w_assets"/>
+            <input type="text" placeholder="receiver: assets returned here" style="width: 300px" id="w_receiver"/>
+            <input type="text" placeholder="address owner" id="w_owner"/>
+            <span id="w_nonce"></span><br><br>
+
+            <button onclick="supplyToAaveV3()">supplyToAaveV3</button>
+            <input type="text" placeholder="uint256 amount" id="supplyAmt"/>
+            <span id="supplyNonce"></span><br><br>
+            
+            <button onclick="withdrawFromAaveV3()">withdrawFromAaveV3</button>
+            <span id="withdrawNonce"></span>
+        </div>
+    </div>
+    <script defer src="./index.js"></script>
+</body>
+</html>

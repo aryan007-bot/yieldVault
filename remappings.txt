@@ -1,0 +1,5 @@
+openzeppelin/=lib/openzeppelin-contracts/contracts/
+openzeppelin-up/=lib/openzeppelin-contracts-upgradeable/contracts/
+solmate/=lib/solmate/src/
+aave-v3-core/=lib/aave-v3-core/contracts/
+forge-std/=lib/forge-std/src/
